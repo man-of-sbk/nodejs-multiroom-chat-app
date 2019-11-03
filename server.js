@@ -13,6 +13,8 @@ const mime = require("mime-types");
 // *** store contents of cached files
 const cache = {};
 
+const chatServer = require("./lib/chat_server");
+
 const send404 = response => {
   response.writeHead(404, { "Content-Type": "text/plain" });
   response.write("Error 404: resource not found");
@@ -67,6 +69,8 @@ const server = http.createServer(function(request, response) {
 
   serveStatic(response, cache, absPath);
 });
+
+// chatServer.listen(server);
 
 server.listen(3000, function() {
   console.log("Server is running on port 3000");
