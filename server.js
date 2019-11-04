@@ -70,7 +70,7 @@ const server = http.createServer(function(request, response) {
   serveStatic(response, cache, absPath);
 });
 
-// chatServer.listen(server);
+chatServer.listen(server);
 
 server.listen(3000, function() {
   console.log("Server is running on port 3000");
